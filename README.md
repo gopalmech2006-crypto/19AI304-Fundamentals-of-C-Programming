@@ -1,14 +1,232 @@
-1. Write a c program to print all prime numbers between two limits.
-    <img width="422" height="680" alt="image" src="https://github.com/user-attachments/assets/5a2bf70d-6ad6-4005-bd97-cb1ebd208472" />
-    <img width="202" height="65" alt="image" src="https://github.com/user-attachments/assets/6071e472-e825-4d11-bc8e-43e5daa93092" />
-2. Write a c program to count the number of digits in a number.
-    <img width="335" height="596" alt="image" src="https://github.com/user-attachments/assets/46aa71b4-c72e-4a95-9967-cbf8008733ff" />
-    <img width="127" height="141" alt="image" src="https://github.com/user-attachments/assets/0fc29703-c342-403c-8835-ad541458edfc" />
-3. Write a c program to print the alphabet S in n x n matrix.
-    <img width="428" height="516" alt="image" src="https://github.com/user-attachments/assets/619fb625-d1a3-4997-9a9b-cbc94b12f47c" />
-    <img width="135" height="285" alt="image" src="https://github.com/user-attachments/assets/7437db57-124a-405a-9e68-1d5174a0491d" />
-4. <img width="397" height="483" alt="image" src="https://github.com/user-attachments/assets/ab4af776-ea13-4309-9c66-4606dbd7878e" />
-     <img width="127" height="206" alt="image" src="https://github.com/user-attachments/assets/a70dda65-2cf3-4787-8025-c5414c3c9113" />
-5. Write a c program to find GCD of two numbers using loop.
-    <img width="382" height="421" alt="image" src="https://github.com/user-attachments/assets/eca62ac6-413c-43eb-88fe-35709bb04d24" />
-    <img width="126" height="133" alt="image" src="https://github.com/user-attachments/assets/c0bf2bac-1e2a-4a1d-b82e-ce6373f16422" />
+LAB RECORD
+Name: Gopal B
+Register Number: 212224063001
+Department: ECE
+Date: __________
+Experiment 1
+Aim
+
+To write a C program to read a string and count the number of vowels using a separate function.
+
+Algorithm
+Read the string from the user.
+Pass the string to a function.
+Check each character whether it is a vowel.
+Count the vowels.
+Display the total number of vowels.
+Program
+#include <stdio.h>
+
+int countVowels(char str[]) {
+    int i, count = 0;
+
+    for(i = 0; str[i] != '\0'; i++) {
+        char ch = str[i];
+
+        if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u' ||
+           ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U') {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    printf("Number of vowels = %d", countVowels(str));
+
+    return 0;
+}
+Output
+Enter a string: Saveetha College
+Number of vowels = 7
+Result
+
+Thus the program to count the number of vowels in a string using function was executed successfully.
+
+Experiment 2
+Aim
+
+To write a C program to reverse a string without using library functions like strrev().
+
+Algorithm
+Read the string.
+Find the length of the string manually.
+Swap the characters from beginning and end.
+Print the reversed string.
+Program
+#include <stdio.h>
+
+void reverseString(char str[]) {
+    int i, length = 0;
+    char temp;
+
+    while(str[length] != '\0') {
+        length++;
+    }
+
+    length--;
+
+    for(i = 0; i < length / 2; i++) {
+        temp = str[i];
+        str[i] = str[length - i - 1];
+        str[length - i - 1] = temp;
+    }
+}
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    reverseString(str);
+
+    printf("Reversed string: %s", str);
+
+    return 0;
+}
+Output
+Enter a string: Hello
+Reversed string: olleH
+Result
+
+Thus the program to reverse a string without using strrev() was executed successfully.
+
+Experiment 3
+Aim
+
+To write a C program to check whether a given string is palindrome or not using functions.
+
+Algorithm
+Read the string.
+Find the length of the string.
+Compare characters from both ends.
+If all characters are equal, it is palindrome.
+Otherwise, it is not palindrome.
+Program
+#include <stdio.h>
+
+int isPalindrome(char str[]) {
+    int i, length = 0;
+
+    while(str[length] != '\0') {
+        length++;
+    }
+
+    for(i = 0; i < length / 2; i++) {
+        if(str[i] != str[length - i - 1]) {
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    if(isPalindrome(str))
+        printf("Palindrome");
+    else
+        printf("Not Palindrome");
+
+    return 0;
+}
+Output
+Enter a string: madam
+Palindrome
+Result
+
+Thus the program to check whether the string is palindrome or not was executed successfully.
+
+Experiment 4
+Aim
+
+To write a C program to calculate the length of a string manually using function.
+
+Algorithm
+Read the string.
+Traverse the string until null character.
+Count each character.
+Display the length.
+Program
+#include <stdio.h>
+
+int stringLength(char str[]) {
+    int count = 0;
+
+    while(str[count] != '\0') {
+        count++;
+    }
+
+    return count;
+}
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Length of string = %d", stringLength(str));
+
+    return 0;
+}
+Output
+Enter a string: Computer
+Length of string = 8
+Result
+
+Thus the program to find the length of a string manually was executed successfully.
+
+Experiment 5
+Aim
+
+To write a C program to count the number of words in a sentence using function.
+
+Algorithm
+Read the sentence.
+Initialize word count as 1.
+Traverse the sentence.
+Increment count whenever a space is found.
+Display the total number of words.
+Program
+#include <stdio.h>
+
+int countWords(char str[]) {
+    int i, count = 1;
+
+    for(i = 0; str[i] != '\0'; i++) {
+        if(str[i] == ' ') {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+int main() {
+    char str[200];
+
+    printf("Enter a sentence: ");
+    fgets(str, sizeof(str), stdin);
+
+    printf("Number of words = %d", countWords(str));
+
+    return 0;
+}
+Output
+Enter a sentence: C programming is easy
+Number of words = 4
+Result
+
+Thus the program to count the number of words in a sentence was executed successfully.
