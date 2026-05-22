@@ -2,7 +2,7 @@ LAB RECORD
 Name: Gopal B
 Register Number: 212224063001
 Department: ECE
-Date: __________
+Date: ____22/5/26______
 Experiment 1
 Aim
 
